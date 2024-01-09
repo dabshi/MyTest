@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /myTest
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tycrm_uat?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#redis:
+#  host: localhost
+#  port: 6379
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.example.mt
+  configuration:
+#    关闭驼峰转下划线
+    map-underscore、-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# MyBatis 日志级别配置
+logging:
+  level:
+    com:
+      baomidou:
+        mybatisplus:
+          mapper: DEBUG
+
